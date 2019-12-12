@@ -1,9 +1,6 @@
 
 # Imagem do docker hub
-FROM node:latest
+FROM node:12-alpine
 
 # diretório dentro da imagem
-WORKDIR /usr/src/teste
-
-# Executa npm install para instalar as dependencias do projeto
-RUN npm install
+WORKDIR /home/src/app
