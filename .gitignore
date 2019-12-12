@@ -67,6 +67,7 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
@@ -92,3 +93,5 @@ public/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+.vstags

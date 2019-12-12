@@ -1,21 +1,21 @@
 module.exports = (app) => {
     // listar
-      app.get('/categoria', (req, res) => {
-  
-      });
-  
-      // salvar
-      app.post('/categoria', (req, res) => {
-          
-      });
-      
-      // atualizar
-      app.put('/categoria/:id', (req, res) => {
-  
-      });
-  
-      // delete
-      app.delete('/categoria/:id', (req, res) => {
-  
-      });
-  }
+    app.get('/categoria:categoria_id', (req, res) => {
+    console.log
+    });
+
+    // salvar
+    app.post('/categoria', (req, res) => {
+        
+    });
+    
+    // atualizar
+    app.put('/categoria/:categoria_id', (req, res) => {
+
+    });
+
+    // delete
+    app.delete('/categoria/:categoria_id', (req, res) => {
+
+    });
+}

@@ -1,4 +1,6 @@
-
+/**
+ * Routes main
+*/
 
 module.exports = (app) => {
   require('./categoria-route.js')(app)

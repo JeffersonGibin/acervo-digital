@@ -1,7 +1,13 @@
-module.exports = (app) => {
-  // listar
-    app.get('/usuario', (req, res) => {
+const { Usuario } = require('../controllers')
 
+module.exports = (app) => {
+   // listar
+    app.get('/usuario', (req, res) => {     
+
+      res.status(200).send({
+        status: true,
+        data: Usuario
+      })
     });
 
     // salvar
@@ -18,5 +24,4 @@ module.exports = (app) => {
     app.delete('/usuario/:id', (req, res) => {
 
     });
-
 }
