@@ -6,8 +6,8 @@ const bindParam = require('./middlewares/bindParam')
 
 dotenv.config()
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(bindParam)
 
 require('./routes/index.js')(app)
