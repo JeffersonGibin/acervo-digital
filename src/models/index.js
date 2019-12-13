@@ -2,9 +2,9 @@
  * Models main
 */
 
-const categoria = require('./categoria-controller')
-const genero = require('./genero-controller')
-const midia = require('./midia-controller')
-const usuario = require('./usuario-controller')
+const Categoria = require('./categoria-model')
+const Genero = require('./genero-model')
+const Midia = require('./midia-model')
+const Usuario = require('./usuario-model')
 
-module.exports = { categoria, genero, midia, usuario }
+module.exports = { Categoria, Genero, Midia, Usuario }
