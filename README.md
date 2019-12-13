@@ -12,7 +12,7 @@
 
 ### Iniciando o projeto
 
-Não se preocupe o Docker vai cuidar de todo processo complicado. Para iniciar o projeto escolha o mnodo de exeção que você preferir
+Para iniciar o projeto escolha o modo de exeção que você preferir.
 
 ##### Modo Debug
 
