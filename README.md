@@ -8,7 +8,7 @@
 
  Certifique-se que você tenha instalado em sua máquina o Docker e Docker compose.
 -  [Como instalar o Docker ?](https://docs.docker.com/install/linux/docker-ce/ubuntu/ " ")
--  [Como instalar o docker compose ?](https://docs.docker.com/compose/install/" ")
+-  [Como instalar o docker compose ?](https://docs.docker.com/compose/install/" "  ")
 
 ### Iniciando o projeto
 
