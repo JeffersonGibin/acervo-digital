@@ -15,7 +15,15 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         PRIMARY KEY(id)
     );
 
-    INSERT INTO usuario (nome, email, senha) VALUES('Jefferson', 'jeffersongibin@yahoo.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Jefferson', teste1@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Antonio', teste2@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('carlos', teste3@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Roberta', teste4@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Juliana', teste5@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Maria', teste6@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Carol', teste7@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Cleiton', teste7@teste.com.br', md5('123'));
+    INSERT INTO usuario (nome, email, senha) VALUES('Caio', teste8@teste.com.br', md5('123'));
     SELECT nome AS usuario_criado FROM usuario;
 
     -- Contém todos os generos para ser utilizado com uma midia
