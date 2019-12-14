@@ -1,5 +1,12 @@
 const { DB, getMarkerQuery, getValues, getKeys } = require('../db')
 
+const {
+	SQL_QUERY_NAME_EXISTS,
+	SQL_QUERY_ALL_USER,
+	SQL_QUERY_USER_BY_ID,
+  }  = require('./querys/usuario-query')
+  
+
 /**
  * Model Usuário
 */
@@ -10,8 +17,8 @@ module.exports = {
 	*/
 	emailExists : async (email) => {
 		const query = {
-			text: 'SELECT id  FROM usuario WHERE email = $1',
-			values: [email],
+			text: SQL_QUERY_NAME_EXISTS,
+			values: [true, email],
 		}
 
 		return await DB.query(query)
@@ -42,7 +49,7 @@ module.exports = {
 	read : async (pagina, limite) => {
 
 		const query = {
-			text: 'SELECT id, nome, email FROM usuario WHERE ativo = $1 ORDER BY id LIMIT $2 OFFSET $3',
+			text: SQL_QUERY_ALL_USER,
 			values: [true, limite, pagina],
 		}
 
@@ -56,7 +63,7 @@ module.exports = {
 	readByID: async (id) => {
 
 		const query = {
-			text: 'SELECT id, nome, email FROM usuario WHERE ativo = $1 AND id = $2',
+			text: SQL_QUERY_USER_BY_ID,
 			values: [true, id],
 		}
 

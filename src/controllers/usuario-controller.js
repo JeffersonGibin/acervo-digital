@@ -67,12 +67,10 @@ module.exports = {
         const senha = md5(parametro.senha) || ''
 
 
-        const email = await Usuario.emailExists(parametro.email)
-
-        console.log("email ", email, id)
+        const emailOptions = await Usuario.emailExists(parametro.email)
 
         // Verifico se o usuário já não está cadastrado
-        if (email.isExists && email.id != id) {
+        if (emailOptions.isExists && emailOptions.id != id) {
             return {
                 status: true,
                 msg: "Usuário já cadastrado"
