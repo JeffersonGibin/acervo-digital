@@ -69,4 +69,15 @@ module.exports = (app) => {
 			.then((response) => res.status(200).send(response))
 			.catch((e) => res.status(500).json({ status: false }))
 	});
+
+	/**
+	 * Upload de imagem
+	 */
+	app.post('/v1/midia/:id/upload', (req, res) => {
+
+	})
+
+	app.delete('/v1/midia/:id/upload', (req, res) => {
+
+	})
 }
