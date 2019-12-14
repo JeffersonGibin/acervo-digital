@@ -49,7 +49,8 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         ativo boolean NOT NULL DEFAULT true,
         nome varchar(60) NOT NULL,
         descricao text,
-        categoriaid integer NOT NULL,
+        categoriaid int NOT NULL,
+        imagem varchar(255),
         destaque boolean NOT NULL DEFAULT false,
         PRIMARY KEY(id),
         FOREIGN KEY (categoriaid) REFERENCES categoria(id) ON UPDATE NO ACTION ON DELETE NO ACTION
@@ -58,8 +59,9 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     -- Contém todos os generos de uma mídia
     CREATE TABLE midia_genero (
         id serial,
-        midiaid integer NOT NULL,
-        generoid integer NOT NULL,
+        ativo boolean NOT NULL DEFAULT true,
+        midiaid int NOT NULL,
+        generoid int NOT NULL,
         PRIMARY KEY(id),
         FOREIGN KEY (midiaid) REFERENCES midia(id) ON UPDATE NO ACTION ON DELETE NO ACTION,
         FOREIGN KEY (generoid) REFERENCES genero(id) ON UPDATE NO ACTION ON DELETE NO ACTION
