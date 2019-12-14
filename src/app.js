@@ -12,4 +12,12 @@ app.use(bindParam)
 
 require('./routes/index.js')(app)
 
+app.use(function(req, res, next) {
+    res.status(404).send({
+        status: false,
+        msg: "A rota não existe!"
+    })
+    next();
+});
+
 module.exports = app
