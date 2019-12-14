@@ -1,7 +1,7 @@
 
-const { Client } = require('pg')
+const { Pool } = require('pg')
 
-const DB = new Client({
+const DB = new Pool({
   database: process.env.DB_NAME,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
