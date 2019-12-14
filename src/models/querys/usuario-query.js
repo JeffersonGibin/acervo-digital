@@ -28,8 +28,18 @@ const SQL_QUERY_USER_BY_ID = [
     "AND id = $2 "
 ].join("")
 
+const SQL_QUERY_LOGIN = [
+    "SELECT ",
+    " id, ",
+    " nome, ",
+    " email ",
+    "FROM usuario ",
+    "WHERE email = $1 AND senha = $2",
+].join("")
+
 module.exports = {
     SQL_QUERY_NAME_EXISTS,
     SQL_QUERY_ALL_USER,
-    SQL_QUERY_USER_BY_ID
+    SQL_QUERY_USER_BY_ID,
+    SQL_QUERY_LOGIN
 }

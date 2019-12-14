@@ -99,5 +99,15 @@ module.exports = {
                     msg: "Dados removidos com sucesso"
                 }
             })    
+    },
+
+    signIn: async (login, password) => {
+        return  Usuario.signIn(login, md5(password))
+        .then((response) => {
+            return {
+                status: response.rows.length > 0,
+                data: response.rows[0] || []
+            }
+        })   
     }
 }

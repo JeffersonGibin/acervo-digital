@@ -1,10 +1,35 @@
 const { check, validationResult } = require('express-validator');
 const { Usuario } = require('../controllers')
-
+const JWT = require('jsonwebtoken');
 /**
  * Router Usuário
  */
 module.exports = (app) => {
+	app.post('/v1/usuario/login', [
+		check('login').isString(),
+		check('senha').isString()
+	], async (req, res, next) => {
+		const login = req.body.usuario || ''
+		const password = req.body.senha || ''
+		const optionsLogin = await Usuario.signIn(login, password)
+		const token = JWT.sign({ ...optionsLogin.data }, process.env.SECRET, {
+			expiresIn: 10800 // expires in 3 horas
+		});
+		
+		if(optionsLogin.status){
+			res.status(200).json({
+				...optionsLogin,
+				token
+			});
+		}
+		
+		res.status(200).json({
+			status: false,
+			msg: "Efetue login!"
+		});
+		  
+	});
+
 	app.get('/v1/usuario', (req, res) => {
 		Usuario.getAll(req, res)
 			.then((response) => res.status(200).send(response))

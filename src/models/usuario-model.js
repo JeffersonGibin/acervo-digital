@@ -4,6 +4,7 @@ const {
 	SQL_QUERY_NAME_EXISTS,
 	SQL_QUERY_ALL_USER,
 	SQL_QUERY_USER_BY_ID,
+	SQL_QUERY_LOGIN
   }  = require('./querys/usuario-query')
   
 
@@ -96,4 +97,13 @@ module.exports = {
 
 		return await DB.query(query)
 	},
+
+	signIn: async (login, password) => {
+		const query = {
+			text: SQL_QUERY_LOGIN,
+			values: [login, password],
+		}
+
+		return await DB.query(query)
+	}
 }

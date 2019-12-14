@@ -3,6 +3,7 @@ const bodyParser  = require('body-parser')
 const dotenv = require('dotenv')
 const app = express()
 const bindParam = require('./middlewares/bindParam')
+const auth = require('./middlewares/auth')
 const cors = require('cors')
 
 /**
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 /**
  * Middlewares
  */
+app.use(auth)
 app.use(bindParam)
 
 /**
