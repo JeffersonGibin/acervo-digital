@@ -1,6 +1,10 @@
-const { check, validationResult } = require('express-validator');
-const { Midia } = require('../controllers')
 
+const multer = require('multer')
+const { check, validationResult } = require('express-validator');
+const md5 = require('md5')
+const path = require('path')
+
+const { Midia, Upload } = require('../controllers')
 /**
  * Router Midia
  */
@@ -71,13 +75,56 @@ module.exports = (app) => {
 	});
 
 	/**
-	 * Upload de imagem
-	 */
-	app.post('/v1/midia/:id/upload', (req, res) => {
+	 * Rotas para Upload file
+	*/
+	app.post('/v1/midia/:id/upload', async (req, res) => {
+		function imageExists(res, imagem) {
+			return res.json({
+				"status": false,
+				"msg": "A Mídia já possui uma imagem cadastrada " + "["+imagem+"]"
+			});
+		}
 
+		function typeFile(req, res) {
+			return res.json({
+				"status": false,
+				"msg": "Envie somente imagens JPG ou PNG!"
+			});
+		}
+
+		function finishUpload(req, res, err) {
+			if (!req.file) {
+                return res.json({
+					"status": false,
+					"msg": "Por favor selecione uma imagem!"
+				});
+			}
+			
+			return res.json({
+				"status": true,
+				"msg": "Upload feito com sucesso!"
+			});
+		}
+
+		Upload.create(req, res, imageExists, typeFile, finishUpload)
 	})
 
 	app.delete('/v1/midia/:id/upload', (req, res) => {
 
+		function callbackFileExists (req, res){
+			res.json({
+				"status": true,
+				"msg": "Imagem removida com sucesso!"
+			})
+		}
+
+		function callbackNotFileExists (req, res){
+			res.json({
+				"status": false,
+				"msg": "Imagem não existe!"
+			})
+		}
+
+		Upload.destroy(req, res, callbackFileExists, callbackNotFileExists)
 	})
 }

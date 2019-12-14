@@ -3,7 +3,8 @@ const {
   SQL_QUERY_MEDIA_ALL,
   SQL_QUERY_NOME_EXISTS,
   SQL_QUERY_BY_ID,
-  SQL_QUERY_MIDIAS_DESTAQUE
+  SQL_QUERY_MIDIAS_DESTAQUE,
+  SQL_QUERY_IMAGE_BY_ID
 }  = require('./querys/midia-query')
 
 /**
@@ -124,7 +125,7 @@ module.exports = {
 		const entity = {
 			midia: async () => {
 				const query = {
-					text: 'UPDATE midia SET nome = $1, descricao = $2, categoriaid = $3, destaque = $4 WHERE id = $5 RETURNING 1',
+					text: 'UPDATE midia SET nome = $1, descricao = $2, categoriaid = $3, destaque = $4 WHERE id = $5 RETURNING id',
 					values: [nome, descricao, categoriaid, destaque, id]
 				}
 				
@@ -200,4 +201,25 @@ module.exports = {
 				})
 			})
 	},
+
+	getImageByID: async (midiaid) => {
+
+		const query = {
+			text: SQL_QUERY_IMAGE_BY_ID,
+			values: [true, midiaid],
+		}
+
+		const responseDB = await DB.query(query)
+		return responseDB.rows[0]
+	},
+	
+	saveImage: async (filename, midiaid) => {
+		const query = {
+			text: "UPDATE midia SET imagem = $1 WHERE id = $2 RETURNING id",
+			values: [filename, midiaid],
+		}
+
+		const responseDB = await DB.query(query)
+		return responseDB.rows[0]
+	}
 }
