@@ -1,4 +1,9 @@
 const { DB, getMarkerQuery, getValues, getKeys } = require('../db')
+const {
+    SQL_QUERY_NAME_EXISTS,
+    SQL_QUERY_ALL_GENERO,
+    SQL_QUERY_GENERO_BY_ID
+}  = require('./querys/genero-query')
 
 /**
  * Model Gênero
@@ -10,8 +15,8 @@ module.exports = {
 	*/
 	nomeExists : async (nome) => {
 		const query = {
-			text: 'SELECT id FROM genero WHERE nome = $1',
-			values: [nome],
+			text: SQL_QUERY_NAME_EXISTS,
+			values: [true, nome],
 		}
 
 		return await DB.query(query)
@@ -42,7 +47,7 @@ module.exports = {
 	read : async (pagina, limite) => {
 
 		const query = {
-			text: 'SELECT id, nome FROM genero WHERE ativo = $1 ORDER BY id LIMIT $2 OFFSET $3',
+			text: SQL_QUERY_ALL_GENERO,
 			values: [true, limite, pagina],
 		}
 
@@ -56,7 +61,7 @@ module.exports = {
 	readByID: async (id) => {
 
 		const query = {
-			text: 'SELECT id, nome FROM genero WHERE ativo = $1 AND id = $2',
+			text: SQL_QUERY_GENERO_BY_ID,
 			values: [true, id],
 		}
 
