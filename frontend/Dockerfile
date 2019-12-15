@@ -3,4 +3,4 @@
 FROM node:12-alpine
 
 # diretório dentro da imagem
-WORKDIR /home/src/app
+WORKDIR /home/src/app/frontend

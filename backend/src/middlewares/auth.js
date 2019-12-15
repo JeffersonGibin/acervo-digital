@@ -2,10 +2,10 @@ const JWT = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
     
-    const router = req.url.split("/").filter(arg => arg === 'login')
+    const router1 = req.url.split("/").filter(arg => arg === 'login')
     const token = req.headers['authorization'] || ''
 
-    if(!router.length){
+    if(!router1.length){
         if (!token) {
             return res.status(401).json({ 
                 success: false, 
