@@ -6,12 +6,19 @@ import {
     Form,
     Logo,
     Titulo,
-    BoxInput
+	BoxInput,
+	Message
 } from './Login.style'
 
 import LoginService from '../services/login';
 
 const Login = () => {
+    
+	const [usuario, setUsuario] = useState("");
+	const [senha, setSenha] = useState("");
+	const [isSignIn, setIsSignIn] = useState("");
+	const [message, setMessage] = useState("");
+	
     const signIn = async () => {
         event.preventDefault();
 
@@ -25,17 +32,20 @@ const Login = () => {
 			return false
         }
 
-        const dataService = await LoginService.signIn(usuario, senha)
+		const dataService = await LoginService.signIn(usuario, senha)
         
         if(dataService.status){
+			setIsSignIn("sucesso")
+			setMessage("Sucesso, você será redirecionado...")
             window.location = './dashbord'
         }else{
-            window.location = './login'
+			setIsSignIn("erro")
+			setMessage("Erro, você será redirecionado...")
+			setTimeout(() => {
+				window.location = './login'
+			}, "1000")
         }
     }
-
-    const [usuario, setUsuario] = useState("");
-    const [senha, setSenha] = useState("");
 
     return (
         <Container>
@@ -54,6 +64,7 @@ const Login = () => {
                         Entrar
                     </BtnEntrar>
                 </Form>
+				{isSignIn && <Message tema={isSignIn} >{message}</Message>}
             </BoxLogin>
         </Container>
     )

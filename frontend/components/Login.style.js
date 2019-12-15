@@ -61,6 +61,16 @@ const BtnEntrar = styled.button`
     border:0;
 `
 
+const Message = styled.div`
+    border-radius: 10px;
+    background:  ${props => props.tema == 'sucesso' ? "#27ae60" : "#e74c3c" };
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 10px;
+`
+
 module.exports = {
     Container,
     BoxLogin,
@@ -68,5 +78,6 @@ module.exports = {
     Form,
     Logo,
     Titulo,
-    BoxInput
+    BoxInput,
+    Message
 }

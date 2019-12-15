@@ -5,7 +5,17 @@ const signIn = async (usuario, senha) => {
         usuario: usuario,
         senha: senha,
     })
-    .then(res => res.data)
+    .then((res) => {
+        const response = res.data
+        if(response.status){
+            sessionStorage.removeItem("session")
+            sessionStorage.setItem('session', response.token);
+            sessionStorage.setItem("user_data", JSON.stringify(response.data))
+        }
+
+        return response
+
+    })
     .catch((err) => {
        return "Erro ao efetuar login"
     })

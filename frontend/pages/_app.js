@@ -21,11 +21,10 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
 
-    console.log(pageProps)
     return (
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
         <GlobalStyle/>
+        <Component {...pageProps} />
       </ThemeProvider>
     )
   }
