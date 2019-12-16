@@ -13,7 +13,7 @@ const SQL_QUERY_ALL_USER = [
     " email ",
     "FROM usuario ",
     "WHERE ativo = $1 ",
-    "ORDER BY id ",
+    "ORDER BY id DESC ",
     "LIMIT $2 ",
     "OFFSET $3 "
 ].join("")

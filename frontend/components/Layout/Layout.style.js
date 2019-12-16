@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Application = styled.div`
+const LayoutStyled = styled.div`
 	font-family: 'Roboto', sans-serif; 
 	height: 100vh;
 	display: grid;
@@ -102,11 +102,19 @@ const Destaque = styled.div`
 `
 const Conteudo = styled.div`
 `
+
+const Separator = styled.hr`
+    color: #f00;
+	background-color: #CCC;
+	text-align:center;
+`
+
 module.exports = {
-	Application,
+	LayoutStyled,
 	TopBarHeader,
 	TopBarFooter,
 	Header,
 	Destaque,
-	Conteudo
+	Conteudo,
+	Separator
 }

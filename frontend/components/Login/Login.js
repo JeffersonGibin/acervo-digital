@@ -10,7 +10,7 @@ import {
 	Message
 } from './Login.style'
 
-import LoginService from '../services/login';
+import LoginService from '../../services/login';
 
 const Login = () => {
     

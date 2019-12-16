@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const useSession = () => {
-    if(!sessionStorage.session){
-        location = './login'
-    }
+    useEffect(() => {
+        if(!sessionStorage.session){
+            location = './login'
+        }
+	})
 }
 
 const dataSession = () => {

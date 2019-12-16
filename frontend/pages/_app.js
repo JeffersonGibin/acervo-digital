@@ -1,6 +1,7 @@
 import App from 'next/app'
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import Head from 'next/head'
 
 const theme = {
   colors: {
@@ -15,6 +16,22 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     font-family: 'Roboto', sans-serif;
   }
+
+  button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #fff!important;
+    margin: 5px 15px 5px 0px;
+  }
 `
 
 export default class MyApp extends App {
@@ -23,6 +40,10 @@ export default class MyApp extends App {
 
     return (
       <ThemeProvider theme={theme}>
+        <Head>
+          <title>Acervo Digital</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <GlobalStyle/>
         <Component {...pageProps} />
       </ThemeProvider>

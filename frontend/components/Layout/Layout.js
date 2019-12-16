@@ -1,14 +1,13 @@
 import React, { useState, useEffect }  from 'react'
-import { useSession, dataSession } from '../hooks/Session'
+import Hooks from '../../hooks/Session'
 
 import {
-	Application,
+	LayoutStyled,
 	TopBarHeader,
 	TopBarFooter,
 	Header,
-} from './Dashbord.style'
-
-import Conteudo from './Conteudo'
+	Conteudo,
+} from './Layout.style'
 
 const logOff = () => {
 	sessionStorage.removeItem("session")
@@ -17,11 +16,13 @@ const logOff = () => {
 	location = './login'
 }
 
-const Dashbord = () => {
-	const {nome, email, id} = dataSession()
+const Layout = (props) => {
+	Hooks.useSession()
+
+	const {nome, email, id} = Hooks.dataSession()	
 
 	return (
-		<Application>
+		<LayoutStyled>
 		  <Header>
 				<TopBarHeader>
 					<div className="topBar-left">Acervo Digital</div>
@@ -32,18 +33,18 @@ const Dashbord = () => {
 				</TopBarHeader>
 				<TopBarFooter>
 					<ul className="menu">
-						<li><a href="">Usuários</a></li>
-						<li><a href="">Categorias</a></li>
-						<li><a href="">Gêneros</a></li>
-						<li><a href="">Midias</a></li>
+						<li><a href="./usuarios">Usuários</a></li>
+						<li><a href="./categorias">Categorias</a></li>
+						<li><a href="./generos">Gêneros</a></li>
+						<li><a href="./midias">Midias</a></li>
 					</ul>
 				</TopBarFooter>
 		  </Header>
 		  <Conteudo>
-
+		  	{props.children}
 		  </Conteudo>
-		</Application>
-	  )
+		</LayoutStyled>
+	)
 }
 
-export default Dashbord
+export default Layout

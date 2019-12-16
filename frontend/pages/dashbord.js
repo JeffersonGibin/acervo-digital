@@ -1,6 +1,6 @@
 import React from 'react'
-import Dashbord from '../components/Dashbord'
+import Layout from '../components/Layout/Layout'
 
 export default () => {
-  return <Dashbord/>
+  return <Layout/>
 }

@@ -40,7 +40,7 @@ const SQL_QUERY_MEDIA_ALL = [
     "  AND c.ativo = $2 ",
     "  AND g.ativo = $3 ",
     "  AND mg.ativo = $4 ",
-    " ORDER BY m.nome",
+    " ORDER BY m.id DESC ",
     " LIMIT $5 ",
     " OFFSET $6 "
 ].join("")
