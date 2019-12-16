@@ -1,7 +1,19 @@
 version: '3'
 
 services:
+  postgres:
+    container_name: postgresql
+    image: postgres:11.2-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: sympla
+      POSTGRES_USER: sympla
+      POSTGRES_DB: acervo_digital
+      FILE_DATA_POSTGRES: ./backend/scripts/data.sql
+    volumes:                                                                                                                                           
+      - ./backend/scripts:/docker-entrypoint-initdb.d/
   backend:
+    container_name: backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -14,6 +26,7 @@ services:
       - "9229:9229"
     command: sh -c 'cd backend && npm i && npm run start'
   frontend:
+    container_name: frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -24,12 +37,3 @@ services:
     ports:
       - "3000:3000"
     command: sh -c 'cd frontend && npm i && npm run dev'    
-  postgres:
-    image: postgres:11.2-alpine
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: sympla
-      POSTGRES_USER: sympla
-      POSTGRES_DB: acervo_digital
-    volumes:                                                                                                                                           
-      - ./backend/scripts:/docker-entrypoint-initdb.d/
