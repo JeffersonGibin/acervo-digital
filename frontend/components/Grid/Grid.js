@@ -23,7 +23,7 @@ const Grid = (props) => {
             
             <Col key={index2}>
                 {!row ? (<div>
-                    <Button color="red" data={obj} onClick={props.excluir}>Excluir</Button>
+                    <Button color="#e74c3c" data={obj} onClick={props.excluir}>Excluir</Button>
                 </div>) : row}
             </Col>
         ))

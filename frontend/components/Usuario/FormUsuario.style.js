@@ -25,7 +25,7 @@ const ButtonCadastrar = styled.button`
     background-color: #2196F3!important;
 `
 
-const ButtonLimpar = styled.button`
+const ButtonEditar = styled.button`
     background-color: #ff9800 !important;
 `
 
@@ -34,5 +34,5 @@ module.exports = {
     InputText,
     Form,
     ButtonCadastrar,
-    ButtonLimpar
+    ButtonEditar
 }

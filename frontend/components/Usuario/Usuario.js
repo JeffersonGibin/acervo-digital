@@ -17,16 +17,31 @@ const Usuario = (props) => {
 			.then(res => setUsuarios(res.data))
 	}
 
+	const resetState = () => {
+		setValuesEdit({
+			nome: "",
+			email: ""
+		})
+	}
+
 	const onExcluir = (param) => {
-		console.log("onExcluir", param)
+		if(param.id != sessionStorage.getAll){
+
+		}
+
+		UsuarioService.remove(param.id)
+			.then((res) => {
+				resetState()
+				getUsuarios()
+				alert(res.data.msg || '')
+			})
 	}
 
 	const onClickRow = (param) => {
-		console.log("param ", param)
 		setValuesEdit({
 			id: param.id,
 			nome: param.nome,
-			email: param.email
+			email: param.email,
 		})
 	}
 
@@ -44,13 +59,17 @@ const Usuario = (props) => {
 	}
 
 	const onEdit = (values) => {
-        if(values.nome == "" || values.email == "" || values.senha == ""){
-            alert("Para editar um registro clica sobre uma linha!")
+        if(!valuesEdit.nome || !valuesEdit.email){
+            alert("Selecione um registro para editar!")
             return false
 		}
 		
-		UsuarioService.update(values)
+		UsuarioService.update(values.id, {
+			nome: values.nome || valuesEdit.nome,
+			email: values.email || valuesEdit.email
+		})
 		.then((res) => {
+			resetState()
 			getUsuarios()
 			alert(res.data.msg || '')
 		})

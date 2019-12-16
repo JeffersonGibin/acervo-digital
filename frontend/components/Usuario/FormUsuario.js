@@ -5,13 +5,13 @@ import {
     InputText,
     Form,
     ButtonCadastrar,
-    ButtonLimpar
+    ButtonEditar
 } from './FormUsuario.style'
 
 const FormUsuario = (props) => {
     
     const [values, setValues] = useState({
-        nome: props.data.nome,
+        nome: "",
         email: "",
         senha: ""
     });
@@ -23,12 +23,17 @@ const FormUsuario = (props) => {
     
     const onEdit = (event) => {
         event.preventDefault();
-        props.onEdit(values)
+
+        props.onEdit({
+            ...props.data,
+            ...values,
+        })
     }
 
     const onChange = (event) => {
         const obj = {
             ...values,
+            ...props.data,
             [event.target.name]: event.target.value
         }
         setValues(obj)
@@ -46,8 +51,8 @@ const FormUsuario = (props) => {
                         type="text" 
                         placeholder="Nome *"
                         maxlength="70"
-                        value={values.nome}
                         onChange={(event) => onChange(event)}
+                        value={values.nome || props.data.nome || ''}
                     />
                 </div>
                 <div>
@@ -57,6 +62,8 @@ const FormUsuario = (props) => {
                         placeholder="Email *"
                         maxlength="70"
                         onChange={(event) => onChange(event)}
+                        value={values.email || props.data.email || ''}
+                        
                      />
                 </div>
                 <div>
@@ -66,12 +73,13 @@ const FormUsuario = (props) => {
                         placeholder="Senha *"
                         maxlength="70"
                         onChange={(event) => onChange(event)}
+                        value={values.senha || props.data.senha || ''}
                     />
                 </div>
             
                 <div>
                     <ButtonCadastrar onClick={onSave}>Cadastrar</ButtonCadastrar>
-                    <ButtonLimpar onClick={onEdit}>Editar</ButtonLimpar>
+                    <ButtonEditar onClick={onEdit}>Editar</ButtonEditar>
                 </div>
             </Form>
         </FormUsuarioStyle>

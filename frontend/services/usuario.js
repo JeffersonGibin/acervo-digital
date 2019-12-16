@@ -12,12 +12,19 @@ const save = (params) => {
 }
 
 const update = (id, params) => {
-    return  API.post('/usuario', {
+    console.log("TESTE 123", params)
+    return  API.put('/usuario/'+id, {
         ...params
     })
 }
 
+const remove = (id) => {    
+    return  API.delete('/usuario/'+id)
+}
+
 module.exports = {
     getAll,
-    save
+    save,
+    update,
+    remove
 }

@@ -19,7 +19,7 @@ const logOff = () => {
 const Layout = (props) => {
 	Hooks.useSession()
 
-	const {nome, email, id} = Hooks.dataSession()	
+	const {nome, email, id} = Hooks.getDataSession()	
 
 	return (
 		<LayoutStyled>
