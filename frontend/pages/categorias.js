@@ -1,6 +1,6 @@
 import React from 'react'
-import Categorias from '../components/Categorias'
+import Categoria from '../components/Categoria/Categoria'
 
 export default () => {
-  return <Categorias/>
+  return <Categoria/>
 }
