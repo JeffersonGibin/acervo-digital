@@ -36,6 +36,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         PRIMARY KEY(id)
     );
 
+    INSERT INTO genero (nome) VALUES('Ação');
+    INSERT INTO genero (nome) VALUES('Comédia');
+    INSERT INTO genero (nome) VALUES('Musical');
+
     -- Contém todas as categorias do sistema exemplo: Filmes, Séries, Desenhos...
     CREATE TABLE categoria (
         id serial,
@@ -43,6 +47,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         nome varchar(60) NOT NULL,
         PRIMARY KEY(id)
     );
+
+    INSERT INTO categoria (nome) VALUES('Filmes');
+    INSERT INTO categoria (nome) VALUES('Séries');
+    INSERT INTO categoria (nome) VALUES('Desenhos');
 
     -- Contém todas midias cadastradas (filme, serie, longa metragem etc)
     CREATE TABLE midia (
