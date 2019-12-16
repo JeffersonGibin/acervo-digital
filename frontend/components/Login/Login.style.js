@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div `
-    background: #AAA;
+    background: #353d90;
     justify-content: center;
     display: flex;
     height: 100vh;
@@ -20,9 +20,8 @@ const Form = styled.div`
 
 const Logo = styled.div`
     text-align:center;
-    font-weight: bold;
     font-size: 24px;
-    color: #25384A;
+    color: #353d90;
 `
 
 const Titulo = styled.div`
@@ -54,7 +53,7 @@ const BoxInput = styled.div`
 
 const BtnEntrar = styled.button`
     border-radius: 5px;
-    background: #25384A;
+    background: #353d90;
     height: 30px;
     padding: 5px;
     color: #FFF;
