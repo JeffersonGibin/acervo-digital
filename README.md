@@ -1,6 +1,5 @@
 # Acervo Digital 
 
-
 ### Introdução
 
 
@@ -12,6 +11,7 @@
 
 ### Iniciando o projeto
 
+O docker será responsável por criar todos os ambientes Front-end, Back-end e Banco de dados.
 Para iniciar o projeto escolha o modo de exeção que você preferir.
 
 ##### Modo Debug
@@ -29,8 +29,14 @@ Tudo certo, agora você pode testar os endpoints da API
 http://localhost:4000/v1/
 ```
 
-
 ### Tecnologias utilizadas
+
+##### Front-end
+- ReactJS
+- Axios
+- Next.js
+- StyledComponents
+
 
 ##### Back-end
 - Node.js
