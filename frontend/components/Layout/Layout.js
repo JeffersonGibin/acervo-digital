@@ -25,7 +25,9 @@ const Layout = (props) => {
 		<LayoutStyled>
 		  <Header>
 				<TopBarHeader>
-					<div className="topBar-left">Acervo Digital</div>
+					<div className="topBar-left">
+						<a href="/dashbord">Acervo Digital</a>
+					</div>
 					<div className="topBar-right">
 						<span className="welcome">Olá {nome  || ''} | </span>
 						<span className="logoff"><a onClick={logOff}>Sair</a></span>

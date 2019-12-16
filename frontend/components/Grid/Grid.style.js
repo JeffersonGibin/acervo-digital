@@ -7,6 +7,7 @@ const TableStyle = styled.table`
     height: auto;
     overflow: scroll;
     max-height: 500px;
+    font-size: 14px;
 `
 
 const ColHead = styled.th`

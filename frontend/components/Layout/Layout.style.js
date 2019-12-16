@@ -20,6 +20,11 @@ const TopBarHeader = styled.div`
 		font-size: 20px;
 		color: #FFFFFF;
 		font-weight: bold;
+
+		& > a {
+			color: #FFF;
+			text-decoration: none;
+		}
 	}
 
 	& > .topBar-right {

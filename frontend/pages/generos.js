@@ -1,6 +1,6 @@
 import React from 'react'
-import Generos from '../components/Generos'
+import Genero from '../components/Genero/Genero'
 
 export default () => {
-  return <Generos/>
+  return <Genero/>
 }
