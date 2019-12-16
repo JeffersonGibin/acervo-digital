@@ -15,6 +15,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         PRIMARY KEY(id)
     );
 
+    INSERT INTO usuario (nome, email, senha) VALUES('Sympla', 'sympla@sympla.com.br', MD5('123'));
     INSERT INTO usuario (nome, email, senha) VALUES('Jefferson', 'jefferson@teste.com.br', MD5('123'));
     INSERT INTO usuario (nome, email, senha) VALUES('Antonio', 'antonio@teste.com.br', MD5('123'));
     INSERT INTO usuario (nome, email, senha) VALUES('Carlos', 'carlos@teste.com.br', MD5('123'));

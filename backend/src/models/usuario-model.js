@@ -77,7 +77,7 @@ module.exports = {
 	*/
 	update : async (id, data) => {
 		const query = {
-			text: 'UPDATE usuario SET nome = $1, email = $2, senha = $3 WHERE ativo = $4 AND id = $5',
+			text: 'UPDATE usuario SET nome = $1, email = $2 WHERE ativo = $3 AND id = $4',
 			values: [...getValues(data), true, id],
 		}
 

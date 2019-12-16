@@ -64,9 +64,6 @@ module.exports = {
     },
 
     update: async (id, parametro) => {
-        const senha = md5(parametro.senha) || ''
-
-
         const emailOptions = await Usuario.emailExists(parametro.email)
 
         // Verifico se o usuário já não está cadastrado
@@ -79,8 +76,7 @@ module.exports = {
 
         return Usuario.update(id, {
             nome: parametro.nome,    
-            email: parametro.email,    
-            senha: senha
+            email: parametro.email
         })
             .then((res) => {
                 return {

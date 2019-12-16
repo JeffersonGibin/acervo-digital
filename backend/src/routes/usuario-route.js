@@ -62,7 +62,6 @@ module.exports = (app) => {
 
 	app.put('/v1/usuario/:id', [
 		check('nome').isString(),
-		check('senha').isString(),
 		check('email').isString()
 	], (req, res) => {
 
