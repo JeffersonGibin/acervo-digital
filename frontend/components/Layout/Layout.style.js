@@ -11,7 +11,7 @@ const TopBarHeader = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 200px;
 	height:40px;
-	background: #25384A;
+	background: #353d90;
 
 	& > .topBar-left {
 		max-width: 200px;
@@ -71,7 +71,8 @@ const TopBarFooter  = styled.div`
 	}
 `
 const Header = styled.div`
-  background: #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background: #545ad9;
 `
 
 const Destaque = styled.div`

@@ -22,12 +22,15 @@ const Form = styled.form`
 `
 
 const ButtonCadastrar = styled.button`
-    background-color: #2196F3!important;
+    background-color: #28a745!important;
+    font-weight: 600;
 `
 
 const ButtonEditar = styled.button`
-    background-color: #ff9800 !important;
+    background-color: #ffc107 !important;
+    font-weight: 600;
 `
+
 
 module.exports = {
     FormUsuarioStyle,
