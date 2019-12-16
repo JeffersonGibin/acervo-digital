@@ -1,4 +1,4 @@
-import API from './api';
+import { API } from './api';
 
 const signIn = async (usuario, senha) => {
     return await API.post('/usuario/login', {

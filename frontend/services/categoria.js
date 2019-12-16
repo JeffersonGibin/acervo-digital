@@ -1,4 +1,4 @@
-import API from './api';
+import { API, removeDataSession } from './api';
 
 const getAll = async () => {
     return  await API.get('/categoria?limite=9999')

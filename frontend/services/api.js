@@ -8,7 +8,7 @@ const API = axios.create({
 
 const responseHandler = (err) => {
     alert("Erro ao processar dados!")
-    return Promise.reject(err);
+    return "Promise.reject(err);"
 }
 
 const success = (config) => {
@@ -23,4 +23,17 @@ const success = (config) => {
 
 API.interceptors.request.use(success , responseHandler)
 
-export default API;
+const removeDataSession = (status) => {
+    sessionStorage.removeItem("session")
+    sessionStorage.removeItem("user_data")
+    
+    if(status === 401) {
+        alert("Sua sessão expirou, você será redirecionado...")
+        location = "./login"
+    }
+}
+
+module.exports = {
+    API,
+    removeDataSession
+}
