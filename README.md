@@ -35,7 +35,7 @@ http://localhost:4000/v1/
 - ReactJS
 - Axios
 - Next.js
-- StyledComponents
+- Styled Components
 
 
 ##### Back-end
