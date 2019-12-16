@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
       
         JWT.verify(token, process.env.SECRET, function(err, decoded) {
           if (err) {
-            return res.status(500).json({ 
+            return res.status(401).json({ 
                 success: false,
                 status: "TOKEN_VALIDATION",
                 message: 'Token inválido!' 
@@ -26,7 +26,7 @@ module.exports = (req, res, next) => {
           const now = Date.now().valueOf() / 1000
 
           if (typeof decoded.exp !== 'undefined' && decoded.exp < now) {
-            return res.status(500).json({ 
+            return res.status(401).json({ 
                 success: false,
                 status: "TOKEN_VALIDATION",
                 message: 'Token expirado!' 
