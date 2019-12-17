@@ -20,8 +20,8 @@
     );
 
     INSERT INTO genero (nome) VALUES('Ação');
-    INSERT INTO genero (nome) VALUES('Comédia');
-    INSERT INTO genero (nome) VALUES('Musical');
+    INSERT INTO genero (nome) VALUES('Documentaário');
+    INSERT INTO genero (nome) VALUES('Guerra');
 
     -- Contém todas as categorias do sistema exemplo: Filmes, Séries, Desenhos...
     CREATE TABLE categoria (
