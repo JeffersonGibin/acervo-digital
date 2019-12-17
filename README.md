@@ -12,6 +12,14 @@ Antes de iniciar o projeto certifique-se que você tenha instalado em sua máqui
 -  [Como instalar o Docker ?](https://docs.docker.com/install/linux/docker-ce/ubuntu/ " ")
 -  [Como instalar o docker compose ?](https://docs.docker.com/compose/install/" "  ")
 
+#### Docker
+
+Certifique-se de ter instalado o docker-compose >= 1.24.1
+```shell
+sudo docker-compose -v
+```
+
+
 ### Iniciando o projeto
 
 O docker será responsável por criar todos os ambientes Front-end, Back-end e Banco de dados.
