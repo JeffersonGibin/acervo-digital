@@ -1,6 +1,6 @@
 import React from 'react'
-import Midias from '../components/Midias'
+import Midia from '../components/Midia/Midia'
 
 export default () => {
-  return <Midias/>
+  return <Midia/>
 }

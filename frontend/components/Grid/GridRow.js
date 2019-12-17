@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const GridRow = (props) => {
     const onClick = (data) => {
-        delete props.data.acoes;
         props.onClick(props.data)
     }
 

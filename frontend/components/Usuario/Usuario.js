@@ -10,7 +10,7 @@ import Card from '../Card'
 const Usuario = (props) => {
 	const [usuarios, setUsuarios] = useState([])
 	const [valuesEdit, setValuesEdit] = useState({})
-	const columns = ["", "Nome", "Email"]
+	const columns = ["id", "nome", "email"]
 
 	const getUsuarios = () => {
 		UsuarioService.getAll()
@@ -25,10 +25,6 @@ const Usuario = (props) => {
 	}
 
 	const onExcluir = (param) => {
-		if(param.id != sessionStorage.getAll){
-
-		}
-
 		UsuarioService.remove(param.id)
 			.then((res) => {
 				resetState()
@@ -38,11 +34,7 @@ const Usuario = (props) => {
 	}
 
 	const onClickRow = (param) => {
-		setValuesEdit({
-			id: param.id,
-			nome: param.nome,
-			email: param.email,
-		})
+		setValuesEdit(param)
 	}
 
 	const onSave = (values) => {

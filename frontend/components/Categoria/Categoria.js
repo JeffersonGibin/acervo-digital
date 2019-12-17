@@ -10,7 +10,7 @@ import Card from '../Card'
 const Categoria = (props) => {
 	const [categorias, setCategorias] = useState([])
 	const [valuesEdit, setValuesEdit] = useState({})
-	const columns = ["", "Nome"]
+	const columns = ["id", "nome"]
 
 	const getCategorias = () => {
 		CategoriaService.getAll()
@@ -24,7 +24,6 @@ const Categoria = (props) => {
 	}
 
 	const onExcluir = (param) => {
-
 		CategoriaService.remove(param.id)
 			.then((res) => {
 				resetState()

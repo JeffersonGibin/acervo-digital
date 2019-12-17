@@ -1,9 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import Login from '../components/Login/Login'
 
 export default () => {
-  return (
-	  <div>teste</div>
-  )
+  return <Login/>
 }

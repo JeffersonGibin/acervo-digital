@@ -21,20 +21,19 @@ const FormGenero = (props) => {
     
     const onEdit = (event) => {
         event.preventDefault();
-
         props.onEdit({
             ...props.data,
-            ...values,
+            ...values
         })
+        setValues({})
     }
 
     const onChange = (event) => {
-        const obj = {
-            ...values,
+        setValues({
             ...props.data,
+            ...values,
             [event.target.name]: event.target.value
-        }
-        setValues(obj)
+        })
     }
 
 	return (

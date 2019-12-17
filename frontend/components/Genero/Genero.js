@@ -10,7 +10,7 @@ import Card from '../Card'
 const Genero = (props) => {
 	const [generos, setGeneros] = useState([])
 	const [valuesEdit, setValuesEdit] = useState({})
-	const columns = ["", "Nome"]
+	const columns = ["id", "nome"]
 
 	const getGeneros = () => {
 		GeneroService.getAll()

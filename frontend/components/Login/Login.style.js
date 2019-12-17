@@ -57,7 +57,8 @@ const BtnEntrar = styled.button`
     height: 30px;
     padding: 5px;
     color: #FFF;
-    border:0;
+    border: 0;
+    margin: 0
 `
 
 const Message = styled.div`

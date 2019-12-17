@@ -19,20 +19,20 @@ const Grid = (props) => {
 
     const renderColums = (obj) => {
         obj.acoes = ""
-        return Object.values(obj).map((row, index2) => (
+        return columns.map((item, index2) => (
             
             <Col key={index2}>
-                {!row ? (<div>
+                {!obj[item] ? (<div>
                     <Button color="#d92550" data={obj} onClick={props.excluir}>Excluir</Button>
-                </div>) : row}
+                </div>):  obj[item]}
             </Col>
         ))
     }
 
     const renderRow = () => {
-        return data.map((obj, index) => (
-            <GridRow key={index} data={obj} onClick={props.onClickRow}>
-                {renderColums(obj)}
+        return data.map((row, index) => (
+            <GridRow key={index} data={row} onClick={props.onClickRow}>
+                {renderColums(row)}
             </GridRow>
         ))        
     }
@@ -42,7 +42,7 @@ const Grid = (props) => {
             <thead>
                 <tr>
                     {columns.push("Ações") && columns.map((column, index) => (
-                        <ColHead key={index}>{column}</ColHead>
+                        <ColHead key={index}>{column.toUpperCase()}</ColHead>
                     ))}
                 </tr>              
             </thead>
