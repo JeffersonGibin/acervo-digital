@@ -10,8 +10,8 @@ const LayoutStyled = styled.div`
 const TopBarHeader = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 200px;
-	height:40px;
-	background: #353d90;
+	height:60px;
+	background: #00adff;
 
 	& > .topBar-left {
 		max-width: 200px;
@@ -19,10 +19,12 @@ const TopBarHeader = styled.div`
 		line-height: 40px;
 		font-size: 20px;
 		color: #FFFFFF;
+		letter-spacing: 5px;
 		font-weight: bold;
+		padding:10px;
 
 		& > a {
-			color: #FFF;
+			color: #FFFFFF;
 			text-decoration: none;
 		}
 	}
@@ -30,7 +32,7 @@ const TopBarHeader = styled.div`
 	& > .topBar-right {
 		color: #FFFFFF;
 		text-align: center;
-		line-height: 40px;
+		line-height: 60px;
 	}
 
 	& > .topBar-right > .logoff {
@@ -41,7 +43,7 @@ const TopBarHeader = styled.div`
 
 const TopBarFooter  = styled.div`
 	text-align:center;
-	color: #FFFFFF;
+	color: #4d4d4d;
 	height: 110px;
 	position: relative;
 	
@@ -53,8 +55,9 @@ const TopBarFooter  = styled.div`
 		position: absolute;
 		right: 0;
 		left: 0;
-		top: 50px;
+		top: 15px;
 		line-height: 60px;
+		font-weight: bold;
 	}
 
 	& > .menu > li {
@@ -67,12 +70,12 @@ const TopBarFooter  = styled.div`
 		display: inline-block;
 		color: #333;
 		text-decoration: none;
-		color: #FFFFFF;
+		color: #4d4d4d;
 	}
 `
 const Header = styled.div`
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	background: #545ad9;
+	background: #FFFFFF;
 `
 
 const Destaque = styled.div`

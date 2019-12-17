@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div `
-    background: #353d90;
+    background: #f7f7f7;
     justify-content: center;
     display: flex;
     height: 100vh;
@@ -9,19 +9,23 @@ const Container = styled.div `
 
 const Form = styled.div`
     grid-template-rows: 30px auto 1fr 1fr 1fr;
-    box-shadow: 3px 4px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
     justify-content: center;
     background: #fff;
     display: grid;
     row-gap: 15px;
-    padding: 10px;
+    padding: 35px;
     width: 300px;
 `
 
 const Logo = styled.div`
     text-align:center;
     font-size: 24px;
-    color: #353d90;
+    text-align: center;
+    font-size: 24px;
+    color: #4d4d4d;
+    letter-spacing: 5px;
+    font-weight: bold
 `
 
 const Titulo = styled.div`
@@ -53,7 +57,7 @@ const BoxInput = styled.div`
 
 const BtnEntrar = styled.button`
     border-radius: 5px;
-    background: #353d90;
+    background: #00adff;
     height: 30px;
     padding: 5px;
     color: #FFF;

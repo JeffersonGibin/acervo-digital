@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     font-family: 'Roboto', sans-serif;
+    background: #f7f7f7;
   }
 
   button {
@@ -24,7 +25,8 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
-    color: inherit;
+    border-color: #ebebeb;
+    color: #736d6d;
     background-color: inherit;
     text-align: center;
     cursor: pointer;
